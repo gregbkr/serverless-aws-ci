@@ -1,0 +1,14 @@
+service: hellojs
+provider:
+  name: aws
+  region: eu-west-1
+  runtime: nodejs12.x
+
+functions:
+  hellojs:
+    handler: hellojs/index.handler
+    events:
+      - http: GET hellojs
+
+plugins:
+  - serverless-offline
