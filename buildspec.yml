@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - npm install -g serverless
-      - npm install -g serverless-offline
+      - npm install serverless-offline --save-dev
   post_build:
     commands:
       - serverless deploy --stage dev --region eu-west-1 --verbose
