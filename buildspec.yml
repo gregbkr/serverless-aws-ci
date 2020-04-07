@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    BRANCH: echo "$CODEBUILD_WEBHOOK_TRIGGER" | sed 's/branch\///g'
+    BRANCH: $(echo "$CODEBUILD_WEBHOOK_TRIGGER" | sed 's/branch\///g')
 
 phases:
   install:
