@@ -17,7 +17,5 @@ phases:
       - sls plugin install -n serverless-python-requirements
   post_build:
     commands:
-
-
       - serverless deploy --stage $CODEBUILD_SOURCE_VERSION --region eu-west-1 --verbose
   
