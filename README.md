@@ -28,22 +28,20 @@ aws cloudformation update-stack --stack-name serverless-demo-hello-cf --template
 - Deploy with: `sls deploy --stage develop --verbose`
 - Deploy to prod: `sls deploy --stage master --verbose`
 
-To deploy to all component another environment, in DEV, change the `stack-name` user:
-
 Test with your own URL and API key (you will find the key in aws console apigateway -> apikeys): 
 ```
-curl -H "x-api-key: CsYjYxhWiNaKho6Bqt9EW2UbQulgd5475H947qyb" https://kl4q7u9lg3.execute-api.eu-west-1.amazonaws.com/dev/hellojs/
+curl -H "x-api-key: CsYjYxhWiNaKho6Bqt9EW2UbQulgd5475H947qyb" https://kl4q7u9lg3.execute-api.eu-west-1.amazonaws.com/develop/hellojs/
 {"message": "hello world"}%
 ```
 
 ### Deploy via CI
-- Edit ci with your needs: `nano .gitlab-ci.yml`
-- Push file
+- Edit ci with your needs: `nano buildspec.yml`
+- Push code to master or develop for auto CI/CD
 
 ### Deploy/test locally
 ```
 serverless offline
-curl http://localhost:3000/dev/hellojs
+curl http://localhost:3000/develop/hellojs
 ```
 
 ### Check values

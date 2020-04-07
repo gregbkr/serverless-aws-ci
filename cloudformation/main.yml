@@ -73,6 +73,8 @@ Resources:
           - apigateway:*
           - cloudfront:*
           - route53:*
+          - s3:*
+          - codebuild:*
           Effect: Allow
           Resource: '*'
       PolicyName: !Ref AWS::StackName
