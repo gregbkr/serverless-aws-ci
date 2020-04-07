@@ -17,5 +17,5 @@ phases:
     commands:
       - echo CODEBUILD_WEBHOOK_BASE_REF
       - echo CODEBUILD_SOURCE_VERSION
-      - serverless deploy --stage dev --region eu-west-1 --verbose
+      - serverless deploy --stage CODEBUILD_WEBHOOK_BASE_REF --region eu-west-1 --verbose
   
