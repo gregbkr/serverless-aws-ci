@@ -19,6 +19,7 @@ nano main.yml <-- edit with your needs
 aws cloudformation create-stack --stack-name serverless-demo-hello-dev-cf --template-body file://main.yml
 aws cloudformation update-stack --stack-name serverless-demo-hello-dev-cf --template-body file://main.yml <-- if already created
 ```
+
 - You will get the value from the output.
 
 

@@ -31,7 +31,7 @@ Resources:
         Webhook: true
         FilterGroups:
           - - Type: EVENT
-              Pattern: PULL_REQUEST_CREATED,PULL_REQUEST_UPDATED
+              Pattern: PUSH
             - Type: BASE_REF
               Pattern: ^refs/heads/develop$
 
