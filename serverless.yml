@@ -6,8 +6,7 @@ provider:
     VAR1: "go!"
     STAGE: ${opt:stage}
   apiKeys: 
-    - nam: hello-key
-      value: rCeoPOSTEpHrogROKEvaL
+    - name: serverless-demo-hello-${opt:stage}
   usagePlan:
     quota:
       limit: 200
@@ -31,8 +30,10 @@ functions:
     handler: hellopy/app.lambda_handler
     runtime: python3.8
     events:
-      - http: GET hellopy
-        # private: true
+      - http: 
+          path: hellopy
+          method: GET
+          # private: true
 
 plugins:
   - serverless-python-requirements

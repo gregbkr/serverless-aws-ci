@@ -10,12 +10,6 @@ phases:
       - npm install -g serverless
       - npm install serverless-offline --save-dev
       - sls plugin install -n serverless-python-requirements
-      # # NodeJs12
-      # - apt update -y
-      # - apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-      # - curl -sL https://deb.nodesource.com/setup_12.x | bash -
-      # - apt -y install nodejs
-      # /NodeJs12
   post_build:
     commands:
       - echo $CODEBUILD_WEBHOOK_BASE_REF
