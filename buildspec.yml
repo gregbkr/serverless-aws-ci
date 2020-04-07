@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       python: 3.8
-      nodejs: 12.14
+      nodejs: 12.x
     commands:
       - npm --version
       - npm install -g serverless
