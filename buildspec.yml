@@ -1,7 +1,8 @@
 version: 0.2
 
-variables:
-  BRANCH: echo "$CODEBUILD_WEBHOOK_TRIGGER" | sed 's/branch\///g'
+env:
+  variables:
+    BRANCH: echo "$CODEBUILD_WEBHOOK_TRIGGER" | sed 's/branch\///g'
 
 phases:
   install:
@@ -18,8 +19,8 @@ phases:
       - npm --version
       - npm install -g serverless
       - npm install serverless-offline --save-dev
-      - sls plugin install -n serverless-python-requirements
+      - sls plugin install -n serverless-python-requirements --stage $BRANCH
   post_build:
     commands:
-      - serverless deploy --stage $BRANCH --region eu-west-1 --verbose
+      - sls deploy --stage $BRANCH --region eu-west-1 --verbose
   
