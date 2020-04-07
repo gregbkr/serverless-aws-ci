@@ -14,7 +14,8 @@ phases:
       - echo $CODEBUILD_WEBHOOK_HEAD_REF
       - echo $CODEBUILD_WEBHOOK_TRIGGER
       - echo $CODEBUILD_SOURCE_VERSION
-      - echo "$CODEBUILD_WEBHOOK_TRIGGER" | sed 's/branch\///g'
+      - BRANCH1 = $(echo "$CODEBUILD_WEBHOOK_TRIGGER" | sed 's/branch\///g')
+      - echo $BRANCH1
       - env
       - npm --version
       - npm install -g serverless
