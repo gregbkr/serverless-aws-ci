@@ -6,16 +6,18 @@ phases:
       python: 3.8
       nodejs: 12.x
     commands:
+      - echo $CODEBUILD_WEBHOOK_BASE_REF
+      - echo $CODEBUILD_WEBHOOK_HEAD_REF
+      - echo $CODEBUILD_WEBHOOK_TRIGGER
+      - echo $CODEBUILD_SOURCE_VERSION
+      - env
       - npm --version
       - npm install -g serverless
       - npm install serverless-offline --save-dev
       - sls plugin install -n serverless-python-requirements
   post_build:
     commands:
-      - echo $CODEBUILD_WEBHOOK_BASE_REF
-      - echo $CODEBUILD_WEBHOOK_HEAD_REF
-      - echo $CODEBUILD_WEBHOOK_TRIGGER
-      - echo $CODEBUILD_SOURCE_VERSION
-      - env
+
+
       - serverless deploy --stage $CODEBUILD_SOURCE_VERSION --region eu-west-1 --verbose
   
