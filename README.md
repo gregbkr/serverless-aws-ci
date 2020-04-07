@@ -44,19 +44,14 @@ serverless offline
 curl http://localhost:3000/develop/hellojs
 ```
 
-### Check values
-aws cloudformation describe-stacks --stack-name gitlabpoc --region eu-west-1 \
-    --query 'Stacks[0].Outputs[?OutputKey==`ServerlessApiKey`].OutputValue' \
-    --output text
-
 ## Destroy all
-- Destroy using the right region: `aws cloudformation delete-stack --stack-name sam-demo-develop --region eu-west-1`
+- Destroy using the right region: `aws cloudformation delete-stack --stack-name serverless-demo-hello-cf --region eu-west-1`
 
 Todo:
 - [x] Secure with APIkey
 - [x] Dev + Prod
 - [ ] Cloudformation init
-- [ ] Ci create + delete stack
+- [x] Ci create + delete stack
 - [ ] Add route53 domain + Cert
 - [ ] Parameters SSM [here](https://www.youtube.com/watch?v=mDzjTe9WMnY&list=PLGyRwGktEFqe3-M1EfbpRX_syICmytNWx&index=8)
 - [ ] Codebuild locally
