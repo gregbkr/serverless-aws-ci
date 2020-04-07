@@ -68,6 +68,11 @@ Resources:
         - Action:
           - logs:*
           - cloudformation:*
+          - iam:*
+          - lambda:*
+          - apigateway:*
+          - cloudfront:*
+          - route53:*
           Effect: Allow
           Resource: '*'
       PolicyName: !Ref AWS::StackName

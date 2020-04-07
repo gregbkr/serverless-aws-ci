@@ -12,7 +12,8 @@ I used this [tuto](https://docs.gitlab.com/ee/user/project/clusters/serverless/a
 
 - Optional: create a certificate for this API e.g.: `*.api.demo.cloudlabs.link`
 - You can create a new serverless template with : `serverless create --template aws-nodejs`
-- First create the IAM user with: 
+
+- First create the infra with cloudformation: Codebuild project & IAM role
 ```
 cd cloudformation
 nano main.yml <-- edit with your needs
@@ -20,7 +21,7 @@ aws cloudformation create-stack --stack-name serverless-demo-hello-cf --template
 aws cloudformation update-stack --stack-name serverless-demo-hello-cf --template-body file://main.yml --capabilities CAPABILITY_NAMED_IAM <-- if already created
 ```
 
-- You will get the value from the output.
+- You will get the value from the output in Codebuild logs.
 
 
 ### Deploy manually
