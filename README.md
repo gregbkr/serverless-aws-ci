@@ -16,8 +16,8 @@ I used this [tuto](https://docs.gitlab.com/ee/user/project/clusters/serverless/a
 ```
 cd cloudformation
 nano main.yml <-- edit with your needs
-aws cloudformation create-stack --stack-name serverless-demo-hello-dev-cf --template-body file://main.yml --capabilities CAPABILITY_NAMED_IAM
-aws cloudformation update-stack --stack-name serverless-demo-hello-dev-cf --template-body file://main.yml --capabilities CAPABILITY_NAMED_IAM <-- if already created
+aws cloudformation create-stack --stack-name serverless-demo-hello-cf --template-body file://main.yml --capabilities CAPABILITY_NAMED_IAM
+aws cloudformation update-stack --stack-name serverless-demo-hello-cf --template-body file://main.yml --capabilities CAPABILITY_NAMED_IAM <-- if already created
 ```
 
 - You will get the value from the output.
