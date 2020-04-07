@@ -1,8 +1,12 @@
-version: 0.1
+version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      python: 3.8
+      nodejs: 12.14
     commands:
+      - npm --version
       - npm install -g serverless
       - npm install serverless-offline --save-dev
       - sls plugin install -n serverless-python-requirements
@@ -11,7 +15,6 @@ phases:
       - apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
       - curl -sL https://deb.nodesource.com/setup_12.x | bash -
       - apt -y install nodejs
-      
       # /NodeJs12
   post_build:
     commands:
