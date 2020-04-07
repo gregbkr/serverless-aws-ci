@@ -34,7 +34,10 @@ Resources:
               Pattern: PUSH
             - Type: HEAD_REF
               Pattern: ^refs/heads/develop$
-              # ExcludeMatchedPattern: false
+          - - Type: EVENT
+              Pattern: PUSH
+            - Type: HEAD_REF
+              Pattern: ^refs/heads/master$
 
 
   # CodeBuildRole:
