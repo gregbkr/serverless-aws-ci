@@ -1,14 +1,39 @@
-service: hellojs
+service: hello
 provider:
   name: aws
   region: eu-west-1
-  runtime: nodejs12.x
+  environment: 
+    VAR1: "go!"
+    STAGE: ${opt:stage}
+  apiKeys: 
+    - nam: hello-key
+      value: rCeoPOSTEpHrogROKEvaL
+  usagePlan:
+    quota:
+      limit: 200
+      offset: 0
+      period: DAY
+    throttle:
+      burstLimit: 5
+      rateLimit: 5
 
 functions:
   hellojs:
     handler: hellojs/index.handler
+    runtime: nodejs12.x
     events:
-      - http: GET hellojs
+      - http: 
+          path: hellojs
+          method: GET
+          private: true
+
+  hellopy:
+    handler: hellopy/app.lambda_handler
+    runtime: python3.8
+    events:
+      - http: GET hellopy
+        # private: true
 
 plugins:
+  - serverless-python-requirements
   - serverless-offline

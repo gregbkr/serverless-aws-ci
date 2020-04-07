@@ -24,3 +24,6 @@ override.tf.json
 # SAM
 .aws-sam
 packaged.yaml
+
+# Serverless
+.serverless

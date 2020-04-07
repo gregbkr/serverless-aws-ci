@@ -1,4 +1,4 @@
-# Serverless Framework: Lambda + API in codepipeline in AWS
+# Serverless Framework: Lambda + API in codebuild in AWS
 
 ## Overview
 CodePipeline will create 2 Lambda apps (javascript + python3) and get a domain url via Apigateway + route53, using serverless
@@ -23,14 +23,14 @@ terraform apply
 
 
 ### Deploy manually
-Deploy with: `serverless deploy --stage production --verbose`
-
+- Deploy with: `sls deploy --stage dev --verbose`
+- Deploy to prod: `sls deploy --stage prod --verbose`
 
 To deploy to all component another environment, in DEV, change the `stack-name` user:
 
 Test with your own URL and API key (you will find the key in aws console apigateway -> apikeys): 
 ```
-curl -H "x-api-key: nM89m9UsGv4SoxntuILms5wcghkREYvY25g77CtB" https://a18qribs8i.execute-api.eu-west-1.amazonaws.com/Prod/hello/
+curl -H "x-api-key: rCeoPOSTEpHrogROKEvaL" https://kl4q7u9lg3.execute-api.eu-west-1.amazonaws.com/dev/hellojs/
 {"message": "hello world"}%
 ```
 
@@ -55,6 +55,7 @@ aws cloudformation describe-stacks --stack-name gitlabpoc --region eu-west-1 \
 Todo:
 - [x] Secure with APIkey
 - [x] Dev + Prod
-- [x] Ci create + delete stack
-- [x] Add route53 domain + Cert
-  
+- [ ] Cloudformation init
+- [ ] Ci create + delete stack
+- [ ] Add route53 domain + Cert
+- [ ] Parameters SSM [here](https://www.youtube.com/watch?v=mDzjTe9WMnY&list=PLGyRwGktEFqe3-M1EfbpRX_syICmytNWx&index=8)
