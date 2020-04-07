@@ -32,8 +32,9 @@ Resources:
         FilterGroups:
           - - Type: EVENT
               Pattern: PUSH
-            - Type: BASE_REF
+            - Type: HEAD_REF
               Pattern: ^refs/heads/develop$
+              # ExcludeMatchedPattern: false
 
 
   # CodeBuildRole:
