@@ -13,6 +13,9 @@ phases:
   post_build:
     commands:
       - echo $CODEBUILD_WEBHOOK_BASE_REF
+      - echo $CODEBUILD_WEBHOOK_HEAD_REF
+      - echo $CODEBUILD_WEBHOOK_TRIGGER
       - echo $CODEBUILD_SOURCE_VERSION
+      - env
       - serverless deploy --stage $CODEBUILD_SOURCE_VERSION --region eu-west-1 --verbose
   
