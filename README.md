@@ -56,8 +56,5 @@ aws cloudformation describe-stacks --stack-name gitlabpoc --region eu-west-1 \
 Todo:
 - [x] Secure with APIkey
 - [x] Dev + Prod
-- [ ] Cloudformation init
-- [ ] Ci create + delete stack
-- [ ] Add route53 domain + Cert
-- [ ] Parameters SSM [here](https://www.youtube.com/watch?v=mDzjTe9WMnY&list=PLGyRwGktEFqe3-M1EfbpRX_syICmytNWx&index=8)
-- [ ] Codebuild locally
+- [x] Cloudformation init
+- [x] Ci create + delete stack
